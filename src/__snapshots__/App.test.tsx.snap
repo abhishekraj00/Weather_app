@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Country List Data renders correctly 1`] = `
+<div
+  className="App"
+>
+  <h1
+    className="heading"
+  >
+    Weather App
+  </h1>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="inputBox"
+      onChange={[Function]}
+      placeholder="Enter Country"
+      type="text"
+      value=""
+    />
+  </form>
+  <div
+    className="card_main"
+  />
+</div>
+`;

@@ -1,0 +1,15 @@
+.card_main{
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+    gap:1rem;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.cardPice{
+margin: 1rem;
+padding: 1rem;
+}
