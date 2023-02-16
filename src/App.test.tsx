@@ -1,22 +1,12 @@
-import { render, screen, waitFor } from "@testing-library/react";
+
 import renderer from "react-test-renderer";
-import Home from "./pages/Home/Home";
-// import Link from '../Link';
+import App from "./App";
 
-// describe("Country List Data", () => {
-//   it("should render country list when api call", async () => {
-//     render(<Home />);
-//     await waitFor(() => {
-//       screen.getByText("india");
-//     });
-//   });
-// });
-
-// create snapshot test for each component
-
-describe("Country List Data", () => {
+// snapshot test for component
+describe("SnapShot Test For Checking ui", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Home />).toJSON();
+    const tree = renderer.create(<App />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
+

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Country List Data renders correctly 1`] = `
+exports[`SnapShot Test For Checking ui renders correctly 1`] = `
 <div
   className="App"
 >

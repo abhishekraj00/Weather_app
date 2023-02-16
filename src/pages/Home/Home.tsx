@@ -16,7 +16,7 @@ interface ResultItem {
   population: number;
 }
 
-function Home() {
+const Home: React.FC = () => {
   const [inputData, setInput] = useState<string>("");
 
   const [callApi, setCall] = useState(false);
@@ -97,6 +97,6 @@ function Home() {
       </div>
     </>
   );
-}
+};
 
 export default Home;
