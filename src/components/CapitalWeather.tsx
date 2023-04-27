@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { getApiData } from "../utils/Api";
 
 type propsData = {
   capital: string;
@@ -19,13 +18,21 @@ function CapitalWeather({ capital }: propsData) {
   const [capitalName, setCapital] = useState<ResultItem>();
 
   const [toggle, setToggle] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    let url = `https://api.weatherapi.com/v1/current.json?key=dd1334ccb0e64fc0a99144806231402&q=${capital}`;
-    getApiData(url).then((res) => {
-      setCapital(res.data.current);
-    });
-  });
+    if (toggle) {
+      let url = `https://api.weatherapi.com/v1/current.json?key=dd1334ccb0e64fc0a99144806231402&q=${capital}`;
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          setCapital(data.current);
+        })
+        .catch((err) => {
+          setError("Error");
+        });
+    }
+  }, [toggle, capital]);
 
   return (
     <>
@@ -35,11 +42,11 @@ function CapitalWeather({ capital }: propsData) {
       >
         {toggle ? "❌" : "Capital Weather"}
       </button>
-
-      {toggle && (
+      {toggle && error && <div>{error}</div>}
+      {toggle && !error && (
         <div className="card p-2 m-2">
           <div>
-            <img src={capitalName?.condition.icon} />
+            {/* <img src={capitalName?.condition.icon} /> */}
             {capitalName?.temp_c}
             <sup>o</sup>C
           </div>

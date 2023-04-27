@@ -1,11 +1,11 @@
 import "./App.css";
 import Home from "./pages/Home/Home";
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    <>
-      <Home data-test={"my-component"} />
-    </>
+    <div data-testId="home-component">
+      <Home />
+    </div>
   );
 };
 
